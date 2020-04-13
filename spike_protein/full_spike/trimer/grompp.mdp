@@ -25,7 +25,7 @@ simulation-part          = 1
 ; mode for center of mass motion removal
 comm_mode                = linear
 ; number of steps for center of mass motion removal
-nstcomm                  = 1000
+nstcomm                  = 10000
 ; group(s) for center of mass motion removal
 comm-grps                = 
 
@@ -56,7 +56,7 @@ nstvout                  = 0
 nstfout                  = 0
 ; Output frequency for energies to log file and energy file
 nstlog                   = 10000
-nstcalcenergy            = 1000
+nstcalcenergy            = 10000
 nstenergy                = 10000
 ; Output frequency and precision for .xtc file
 nstxout-compressed       = 20000
