@@ -1,0 +1,57 @@
+;
+;	File 'topol.top' was generated
+;	By user: vamodi (237567)
+;	On host: nano1603-d01.nano.jyu.fi
+;	At date: Thu Apr 16 10:46:13 2020
+;
+;	This is a standalone topology file
+;
+;	Created by:
+;	                    :-) GROMACS - gmx pdb2gmx, 2018.8 (-:
+;	
+;	Executable:   /home/vamodi/.local/gromacs-2018.8/bin/gmx
+;	Data prefix:  /home/vamodi/.local/gromacs-2018.8
+;	Working dir:  /home/vamodi/SARS-CoV2/MD/apo-RdRP/amber14-MD-ZN
+;	Command line:
+;	  gmx pdb2gmx -f apo-RdRp-dowser.pdb -water tip3p -ignh
+;	Force field was read from current directory or a relative path - path added.
+;
+
+; Include forcefield parameters
+#include "../amber14sb_OL15.ff/forcefield.itp"
+
+; Include chain topologies
+#include "topol_Protein_chain_A.itp"
+#include "topol_Protein_chain_B.itp"
+#include "topol_Protein_chain_C.itp"
+#include "topol_Protein_chain_D.itp"
+#include "topol_Ion_chain_E.itp"
+
+; Include water topology
+#include "../amber14sb_OL15.ff/tip3p.itp"
+
+#ifdef POSRES_WATER
+; Position restraint for each water oxygen
+[ position_restraints ]
+;  i funct       fcx        fcy        fcz
+   1    1       1000       1000       1000
+#endif
+
+; Include topology for ions
+#include "../amber14sb_OL15.ff/ions.itp"
+
+[ system ]
+; Name
+Gnomes, ROck Monsters And Chili Sauce in water
+
+[ molecules ]
+; Compound        #mols
+Protein_chain_A     1
+Protein_chain_B     1
+Protein_chain_C     1
+Protein_chain_D     1
+Ion_chain_E         1
+SOL               188
+SOL         135385
+NA               411
+CL               393
