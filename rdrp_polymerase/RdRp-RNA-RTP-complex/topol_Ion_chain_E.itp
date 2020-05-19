@@ -1,0 +1,39 @@
+;
+;	File 'topol_Ion_chain_E.itp' was generated
+;	By user: vamodi (237567)
+;	On host: nano1603-d01.nano.jyu.fi
+;	At date: Thu Apr 16 12:24:28 2020
+;
+;	This is a include topology file
+;
+;	Created by:
+;	                    :-) GROMACS - gmx pdb2gmx, 2018.8 (-:
+;	
+;	Executable:   /home/vamodi/.local/gromacs-2018.8/bin/gmx
+;	Data prefix:  /home/vamodi/.local/gromacs-2018.8
+;	Working dir:  /home/vamodi/SARS-CoV2/MD/RdRp-RNA-RTP-complex/amber14-MD-ZN
+;	Command line:
+;	  gmx pdb2gmx -f RdRp-RNA-RTP-complex.pdb -water tip3p -ignh
+;	Force field was read from current directory or a relative path - path added.
+;
+
+[ moleculetype ]
+; Name            nrexcl
+Ion_chain_E         3
+
+[ atoms ]
+;   nr       type  resnr residue  atom   cgnr     charge       mass  typeB    chargeB      massB
+; residue 1261 ZN  rtp ZN   q +2.0
+     1         Zn   1261     ZN     ZN      1          2       65.4   ; qtot 2
+; residue 1262 ZN  rtp ZN   q +2.0
+     2         Zn   1262     ZN     ZN      2          2       65.4   ; qtot 4
+; residue 1263 MG  rtp MG   q +2.0
+     3         MG   1263     MG     MG      3          2     24.305   ; qtot 6
+; residue 1264 MG  rtp MG   q +2.0
+     4         MG   1264     MG     MG      4          2     24.305   ; qtot 8
+
+; Include Position restraint file
+#ifdef POSRES
+#include "posre_Ion_chain_E.itp"
+#endif
+
